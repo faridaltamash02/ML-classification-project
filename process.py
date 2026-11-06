@@ -11,7 +11,7 @@ from sklearn.preprocessing import (
     OneHotEncoder,
     StandardScaler
 )
-
+from sklearn.base import clone
 
 # -------------------------------------------
 # STEP 1: Load the dataset
@@ -167,3 +167,10 @@ test_data.to_csv(
 )
 
 print("\nTest data saved successfully!")
+
+def build_preprocessor():
+    """
+    Return a fresh, unfitted copy of the
+    preprocessing pipeline.
+    """
+    return clone(preprocessor)
